@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="title-text">
+        <div class="title login">Login Form</div>
+        <div class="title Signup">Signup form</div>
+      </div>
+      <div class="form-container">
+        <div class="slide-controls">
+          <input type="radio" name="slider" id="login" checked />
+          <input type="radio" name="slider" id="Signup" />
+          <label for="login" class="slide login">Login</label>
+          <label for="Signup" class="slide Signup">Signup</label>
+          <div class="slide-tab"></div>
+        </div>
+        <div class="form-inner">
+          <form action="#" class="Login">
+            <div class="field">
+              <input type="text" placeholder="Email Addres" required />
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Password" required />
+            </div>
+            <div class="pass-link"><a href="#"> Forgot Password?</a></div>
+            <div class="field">
+              <input type="submit" value="Login" />
+            </div>
+            <div class="Signup-link">
+              Not a member?<a href="#">Signup Now</a>
+            </div>
+          </form>
+          <form action="#" class="login">
+            <div class="field">
+              <input type="text" placeholder="Email Addres" required />
+            </div>
+            <div class="field">
+              <input type="password" placeholder="password" required />
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Confirm password" required />
+            </div>
+            <div class="pass-link"><a href="#"> forgot password?</a></div>
+            <div class="field">
+              <input type="submit" value="Signup" />
+            </div>
+            <div class="Signup-link">
+              Not a member?<a href="#">Signup Now</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      const Loginform = document.querySelector("form.login");
+      const Signupup = document.querySelector("form.Signup");
+      const LoginBtn = document.querySelector("label.login");
+      const SignuppBtn = document.querySelector("label.Signup");
+      const SignupLink = document.querySelector(".Signup-link a");
+      SignupBtn.onclick = (() => {
+       Loginform.style.marginLeft = "-50%";
+      });
+      LoginBtn.onclick = (() => {
+        Loginform.style.marginLeft = "0%";
+      });
+      SignupLink.onclick = (() => {
+        SignupBtn.onclick();
+        return false;
+      });
+    </script>
+  </body>
+</html>
